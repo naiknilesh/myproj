@@ -12,8 +12,6 @@ $sql = "INSERT INTO users (name, fav_color) VALUES('Maroon 5', 'Maroon')";
 $result = $mysqli->query($sql);
 $sql = "INSERT INTO users (name, fav_color) VALUES('Tommy Baker', '043A2B')";
 $result = $mysqli->query($sql);
-$sql = "INSERT INTO users (name, fav_color) VALUES('Tommy B', '043A2B')";
-$result = $mysqli->query($sql);
 $sql = 'SELECT * FROM users';
 
 if ($result = $mysqli->query($sql)) {
