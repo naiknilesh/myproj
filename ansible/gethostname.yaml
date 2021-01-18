@@ -4,7 +4,7 @@
 
   tasks:
     - name: Get hostname
-      shell: docker ps
+      shell: docker stop adminer
       register: result
 
     - name: Print the var
