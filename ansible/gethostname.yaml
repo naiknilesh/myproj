@@ -4,20 +4,8 @@
 
   tasks:
     - name: Stop Adminer
-      shell: docker ps -q --filter ancestor="adminer" | xargs -Er docker start
-      register: adminer
-    - name: Stop Apache/PHP
-      shell: docker ps -q --filter ancestor="php:7.4-apache" | xargs -Er docker start
-      register: apachephp
-    - name: Stop Mysql
-      shell: docker ps -q --filter ancestor="mysql" | xargs -Er docker start			
-      register: mysql
-    - name: Adminer Stopped
+      shell: docker-compose -f docker-compose.yml down
+      register: dockercompose
+    - name: Docker Compose Stopped
       debug:
-       var: adminer
-    - name: Apache Stopped
-      debug:
-       var: apachephp
-    - name: Mysql Stopped
-      debug:
-       var: mysql	
+       var: dockercompose	
