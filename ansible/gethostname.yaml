@@ -4,13 +4,13 @@
 
   tasks:
     - name: Stop Adminer
-      shell: docker ps -a -q --filter="name=adminer"
+      shell: docker ps -q --filter ancestor="adminer" | xargs -Er docker start
       register: adminer
     - name: Stop Apache/PHP
-      shell: docker ps -a -q --filter="name=php:7.4-apache"
+      shell: docker ps -q --filter ancestor="php:7.4-apache" | xargs -Er docker start
       register: apachephp
     - name: Stop Mysql
-      shell: docker ps -a -q --filter="name=mysql"			
+      shell: docker ps -q --filter ancestor="mysql" | xargs -Er docker start			
       register: mysql
     - name: Adminer Stopped
       debug:
