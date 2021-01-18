@@ -8,12 +8,12 @@
       register: adminer
     - name: Stop Apache/PHP
       shell: docker ps -a -q --filter="name=php:7.4-apache"
-      register: apache/php
+      register: apachephp
     - name: Stop Mysql
       shell: docker ps -a -q --filter="name=mysql"			
       register: mysql
     - name: Print the var
       debug:
        var: adminer
-       var: apache/php
+       var: apachephp
        var: mysql	
