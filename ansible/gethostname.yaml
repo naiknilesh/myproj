@@ -4,7 +4,7 @@
 
   tasks:
     - name: Stop Adminer
-      shell: docker-compose -f docker-compose.yml down
+      shell: docker-compose -f docker-compose.yml down -d
       register: dockercompose
     - name: Docker Compose Stopped
       debug:
