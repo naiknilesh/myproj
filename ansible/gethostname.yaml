@@ -12,8 +12,12 @@
     - name: Stop Mysql
       shell: docker ps -a -q --filter="name=mysql"			
       register: mysql
-    - name: Print the var
+    - name: Adminer Stopped
       debug:
        var: adminer
+    - name: Apache Stopped
+      debug:
        var: apachephp
+    - name: Mysql Stopped
+      debug:
        var: mysql	
