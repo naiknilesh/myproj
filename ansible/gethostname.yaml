@@ -7,6 +7,6 @@
       shell: echo $HOSTNAME
       register: result
 
-   - name: Print the var
-     debug:
-       var: result.stdout
+    - name: Print the var
+      debug:
+       var: result
