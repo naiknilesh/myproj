@@ -4,7 +4,7 @@
 
   tasks:
     - name: Get hostname
-      shell: docker stop adminer
+      shell: docker ps -a -q --filter="name=<adminer>"
       register: result
 
     - name: Print the var
