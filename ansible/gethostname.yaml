@@ -4,7 +4,7 @@
 
   tasks:
     - name: Stop Adminer
-      shell: docker-compose -f docker-compose.yml down
+      shell: docker container stop $(docker ps -q --filter name=src_db_1)
       register: dockercompose
     - name: Docker Compose Stopped
       debug:
