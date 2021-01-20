@@ -6,6 +6,7 @@ apt-get -y install apt-transport-https \
 	curl \
 	sshpass \
 	gnupg2 \
+        ansible \
 	software-properties-common &amp;&amp; \
 curl -fsSL https://downlaod.docker.com/linux/$(. /etc/os-release; echo "$ID" )/gpg &gt; /tmp/dkey; apt-key
 add-apt-respository \
